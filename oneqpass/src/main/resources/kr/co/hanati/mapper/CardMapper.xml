@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.hanati.mapper.CardMapper">
+
+	<insert id="insertCard">
+	INSERT INTO credit_data 
+	(
+		car_num,
+		card_num,
+		card_owner,
+		card_valid_1,
+		card_valid_2,
+		card_cvc,
+		regdate
+	) VALUES(
+		#{carNum},
+		#{cardNum},
+		#{cardOwner},
+		#{cardValid1},
+		#{cardValid2},
+		#{cardCvc},
+		sysdate
+	)
+	</insert>
+	
+	<select id="getCardNum" resultType="String">
+	select card_num cardNum from credit_data where car_num = #{carNum} 
+	</select>
+	
+	<insert id="insertPayment">
+	INSERT INTO payment_history 
+	(
+		car_num,
+		card_num,
+		seq_num,
+		item,
+		cost,
+		quantity,
+		approve_date
+	) VALUES(
+		#{carNum},
+		#{cardNum},
+		seq_num.nextval,
+		#{item},
+		#{cost},
+		#{quantity},
+		sysdate
+	)
+	</insert>
+</mapper>
