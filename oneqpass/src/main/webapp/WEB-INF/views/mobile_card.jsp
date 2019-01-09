@@ -17,13 +17,14 @@
 <body class='regist-body'>
 	<header class='regist-header'>
 		<i class="fas fa-bars menu-icon" style="display: inline-block;"></i>
-		<h4 style="display: inline-block;">오토 페이 서비스</h4>
+		<h4 style="display: inline-block; font-weight: bold;">오토 페이 서비스</h4>
 	</header>
 
 	<section class='regist-section'>
 		<div class='description-div'>
 			<p class="title">사용 카드 등록</p>
-			<p class="description">항목을 빠짐없이 입력하세요</p>
+			<hr style="margin: 0; margin-top: 5px; border-color: #1a5a51;">
+			<small id="emailHelp" class="form-text text-muted description">항목을 빠짐없이 입력하세요</small>
 		</div>
 
 		<div class='input-div'>
@@ -120,7 +121,9 @@
 		</div>
 	</section>
 
-	<footer class='regist-footer'> </footer>
+	<footer class='regist-footer' style="text-align: center;">
+		<img alt="logo" style="width: 40%;" src="https://upload.wikimedia.org/wikipedia/commons/9/95/%ED%95%98%EB%82%98%EA%B8%88%EC%9C%B5%EA%B7%B8%EB%A3%B9_%EB%A1%9C%EA%B3%A0.png">
+	</footer>
 
 	<!-- 카드 등록 토스트 -->
 	<div class="toast" role="alert" aria-live="assertive" aria-atomic="false" id='registToast'>
@@ -204,6 +207,9 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	
+    overflow-x : hidden;
+    overflow-y : hidden;
 }
 
 .regist-header {
@@ -226,7 +232,7 @@
 	background-color: white;
 	color: black;
 	font-size: 4vw;
-	border-bottom: solid 1px black;
+	border-bottom: solid 1px #969a9a8c;
 }
 
 .regist-footer {
@@ -234,7 +240,6 @@
 	float: left;
 	width: 100%;
 	height: 10%;
-	background-color: #298478;
 	color: black;
 	font-size: 4vw;
 	border-bottom: solid 1px black;
@@ -259,7 +264,6 @@
 .button-div {
 	height: 10%;
 	text-align: center;
-	margin: 13px 0px;
 }
 
 /* 숫자 입력창의 화살표 제거 */
@@ -290,17 +294,17 @@ header {
 }
 
 label {
-	font-size: 14px;
+	font-size: 13px;
 }
 
 .description-div .title {
 	margin-bottom: 1px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .description-div .description {
-    font-size: 13px;
+    /* font-size: 13px;*/
 }
 
 .my-button {
