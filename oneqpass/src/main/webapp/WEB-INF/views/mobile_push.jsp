@@ -114,7 +114,7 @@ $('.popup2-button-ok').click(function () {
 		    $('.popup').show();
 		    setTimeout(function(){ 
 			    window.open("<%= application.getContextPath()%>/pos/result");
-	    	}, 2000);
+	    	}, 3000);
 
 			},
 			error : function(request, status, error) {

@@ -81,7 +81,7 @@ public class CardController {
 	@PostMapping(value="/mobile/card/regist", consumes="application/json", produces= {MediaType.APPLICATION_JSON_UTF8_VALUE})
 	public ResponseEntity<String> create(@RequestBody CardDTO dto){
 		
-		dto.setCarNum("12¹Ù3123");
+		dto.setCarNum("12¹Ù3124");
 		System.out.println(dto);
 		boolean insertResult = service.register(dto);
 		

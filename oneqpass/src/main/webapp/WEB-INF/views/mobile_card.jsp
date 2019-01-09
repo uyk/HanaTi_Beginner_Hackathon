@@ -115,16 +115,19 @@
 			success : function(data) {
 				console.log("success .. ");
 				console.log(data);
-					alert('등록이 완료되었습니다');
-					
-			},
-/* 				Snackbar.show({
+				alert('등록이 완료되었습니다');
+				/* 				
+				Snackbar.show({
 					text: '등록이 완료되었습니다.',
 					actionText: 'OK',
 					actionTextColor: '#f66496',
 					pos: 'top-center'
-				}); */ 
-			
+				}); 
+				*/ 
+			    setTimeout(function() {
+			    	window.open("<%= application.getContextPath()%>/pos/main");
+			    }, 3000);
+			},
 			error : function(request, status, error) {
 				console.log("code:" + request.status + "\n" + "message:"
 						+ request.responseText + "\n" + "error:" + error);
