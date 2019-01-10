@@ -10,14 +10,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
-<!-- 	<link rel="stylesheet" type="text/css" href="dist/snackbar.min.css" />
-		<script src="dist/snackbar.min.js"></script> -->
 </head>
 
 <body class='regist-body'>
 	<header class='regist-header'>
 		<i class="fas fa-bars menu-icon" style="display: inline-block;"></i>
-		<h4 style="display: inline-block; font-weight: bold;">NONSTOP</h4>
+		<h4 style="display: inline-block; font-weight: bold;">NONSTOP PAY</h4>
 	</header>
 
 	<section class='regist-section'>
@@ -66,53 +64,7 @@
 							maxlength="3" required onKeyPress="return numkeyCheck(event)" 
 							required class='form-control'>
 				</div>
-				<!-- <button type="submit" class="btn btn-primary">Submit</button> -->
 			</form>
-<!-- 			
-			<table>
-				<tbody>
-					<tr class='card-number-tr'>
-						<th>카드 번호</th>
-						<td>
-							<input type="number" name="card_num_first"
-							id="card_num_first" maxlength="4" required
-							onKeyPress="return numkeyCheck(event)" class=''> -<input
-							type="password" name="card_num_second" id="card_num_second"
-							maxlength="4" required onKeyPress="return numkeyCheck(event)">
-							-<input type="password" name="card_num_third" id="card_num_third"
-							maxlength="4" required onKeyPress="return numkeyCheck(event)">
-							-<input type="number" name="card_num_fourth" id="card_num_fourth"
-							maxlength="4" required onKeyPress="return numkeyCheck(event)">
-						</td>
-						</
-					</tr>
-
-					<tr class='valid-date-tr'>
-						<th>만료일</th>
-						<td><input type="text" name="month" id="month" required
-							placeholder="MM" maxlength="2" required
-							onKeyPress="return numkeyCheck(event)"> /<input
-							type="text" name="year" id="year" required placeholder="YY"
-							maxlength="2" required onKeyPress="return numkeyCheck(event)">
-						</td>
-					</tr>
-
-					<tr>
-						<th>카드 소유자 이름</th>
-						<td><input type="text" name="name" id="name" required>
-						</td>
-					</tr>
-
-					<tr>
-						<th>보안코드(CVC/CVV)</th>
-						<td><input type="number" name="cvc_num" id="cvc_num"
-							maxlength="3" required onKeyPress="return numkeyCheck(event)">
-						</td>
-					</tr>
-
-				</tbody>
-			</table>
-			 -->
 		</div>
 
 		<div class='button-div'>
@@ -125,18 +77,6 @@
 		<img alt="logo" style="width: 40%;" src="https://upload.wikimedia.org/wikipedia/commons/9/95/%ED%95%98%EB%82%98%EA%B8%88%EC%9C%B5%EA%B7%B8%EB%A3%B9_%EB%A1%9C%EA%B3%A0.png">
 	</footer>
 
-	<!-- 카드 등록 토스트 -->
-	<div class="toast" role="alert" aria-live="assertive" aria-atomic="false" id='registToast'>
-		<div class="toast-header">
-			<svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect fill="#007aff" width="100%" height="100%"></rect></svg>
-			<strong class="mr-auto">카드등록</strong>
-			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-		<div class="toast-body">카드 등록이 완료되었습니다.dddddd</div>
-	</div>
-
 </body>
 </html>
 
@@ -144,8 +84,6 @@
 	$(document).ready(function() {
 		$('body').width($(window).width());
 		$('body').height($(window).height());
-		
-		$('#registToast').toast('show');
 	});
 	
 	function numkeyCheck(e) {
@@ -157,9 +95,6 @@
 	}
 	
 	function submit() {
-		console.log('ss');
-		
-		
 		var data = {};
 		data.cardNum = $('#card_num_first').val().toString() + $('#card_num_second').val().toString()
 										 + $('#card_num_third').val().toString() + $('#card_num_fourth').val().toString();
@@ -179,15 +114,10 @@
 			success : function(data) {
 				console.log("success .. ");
 				console.log(data);
-				alert('등록이 완료되었습니다');
-				/* 				
-				Snackbar.show({
-					text: '등록이 완료되었습니다.',
-					actionText: 'OK',
-					actionTextColor: '#f66496',
-					pos: 'top-center'
-				}); 
-				*/ 
+				//alert('등록이 완료되었습니다');
+				$('section').empty();
+				$('section').css('text-align','center');
+				$('section').html('<div style="margin-top: 110px; font-weight:bold;">등록이 완료되었습니다.</div>');
 			    setTimeout(function() {
 			    	window.open("<%= application.getContextPath()%>/pos/main");
 			    }, 3500);

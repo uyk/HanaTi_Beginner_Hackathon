@@ -31,10 +31,27 @@ public class CardController {
 	private static final Logger logger = LoggerFactory.getLogger(CardController.class);
 	public CardService service;
 	
+    @RequestMapping("/favicon.ico")
+    public String favicon() {
+        return "forward:/resources/favicon.ico";
+    }
+
+
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "new_card";
+	}
+	
 	@RequestMapping(value = "/mobile/card/new", method = RequestMethod.GET)
 	public String newTab(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		

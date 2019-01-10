@@ -27,7 +27,6 @@
    var cnt = 0;
    function add(num) {
       var number = parseInt(num);
-      /* var display = document.getElementById("totalAmount"); */
       sum = sum + number;
       $('#totalAmount').html(sum);
       $('#goods').html('아메리카노');
@@ -209,7 +208,7 @@
          <table border="0">
             <td><button type="button" class="btn btn-primary"
                   class="btn" onclick="send()">
-                  오토페이<br>
+                  NONSTOP PAY<br>
                </button></td>
             <td><button type="button" class="btn btn-warning"
                   class="btn" onclick="send()">카드</button></td>
