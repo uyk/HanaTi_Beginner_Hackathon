@@ -41,11 +41,12 @@
         }
         setTimeout(hello, 1500); */
          var data = {};
-//         data.cost = parseInt(document.getElementById("totalAmount").value);
+         data.cost = parseInt($('#totalAmount2').html());
          data.cost = '4100';
          data.item = '아메리카노';
          data.quantity = 1;
          console.log(data);
+         
        var form = $('<form></form>');
        form.attr("method", "post");
        form.attr("action", '<%=application.getContextPath()%>/pos/charge');
@@ -105,7 +106,7 @@
 </head>
 <body>
    <div>
-      <div style="height: 40px; background-color: gray">POS</div>
+      <div style="height: 40px;background-color: gray;text-align: center;font-weight: bold;font-size: 20px;padding-top: 3px;">POS</div>
       <div class="row">
          <div class="col-sm-5" 
             style="border-style: solid; border-width: 1px; border-color: gray; padding-left:0px; padding-right:0px">

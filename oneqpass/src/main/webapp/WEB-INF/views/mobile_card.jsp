@@ -17,7 +17,7 @@
 <body class='regist-body'>
 	<header class='regist-header'>
 		<i class="fas fa-bars menu-icon" style="display: inline-block;"></i>
-		<h4 style="display: inline-block; font-weight: bold;">오토 페이 서비스</h4>
+		<h4 style="display: inline-block; font-weight: bold;">NONSTOP</h4>
 	</header>
 
 	<section class='regist-section'>
